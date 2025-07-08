@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestAi - 控制面板</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-box">
+            <div class="success-icon">✓</div>
+            <h2>登录成功！</h2>
+            <p>欢迎来到 TestAi 控制面板</p>
+            <div style="margin-top: 30px;">
+                <a href="profile.html" class="nav-btn">个人资料</a>
+                <a href="settings.html" class="nav-btn">系统设置</a>
+                <button onclick="logout()" class="nav-btn">退出登录</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="navigation.js"></script>
+    <script>
+        function logout() {
+            userManager.logout();
+            showMessage('已退出登录', 'info');
+            setTimeout(() => {
+                navigationManager.navigateTo('index.html');
+            }, 1000);
+        }
+        
+        // 检查登录状态
+        if (!userManager.checkLoginStatus()) {
+            navigationManager.navigateTo('index.html');
+        }
+    </script>
+</body>
+</html>

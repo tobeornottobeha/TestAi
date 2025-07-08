@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestAi - 个人资料</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>个人资料</h2>
+            <div style="margin-bottom: 20px;">
+                <strong>当前用户：</strong>
+                <span id="currentUserName">未登录</span>
+            </div>
+            <form>
+                <div class="input-group">
+                    <label for="displayName">显示名称</label>
+                    <input type="text" id="displayName" value="测试用户">
+                </div>
+                <div class="input-group">
+                    <label for="userEmail">邮箱地址</label>
+                    <input type="email" id="userEmail" value="user@example.com">
+                </div>
+                <div class="input-group">
+                    <label for="bio">个人简介</label>
+                    <textarea id="bio" style="width: 100%; min-height: 80px; padding: 12px; border: 2px solid #ddd; border-radius: 5px;">这是一个测试用户的个人简介...</textarea>
+                </div>
+                <button type="button" class="login-btn" onclick="saveProfile()">保存更改</button>
+                <div class="links">
+                    <a href="dashboard.html">返回控制面板</a>
+                    <a href="settings.html">系统设置</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="navigation.js"></script>
+    <script>
+        // 检查登录状态
+        if (!userManager.checkLoginStatus()) {
+            navigationManager.navigateTo('index.html');
+        } else {
+            document.getElementById('currentUserName').textContent = userManager.currentUser;
+        }
+        
+        function saveProfile() {
+            showMessage('个人资料已保存', 'success');
+        }
+    </script>
+</body>
+</html>
