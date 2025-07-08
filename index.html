@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面 - TestAi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 id="form-title">登录</h1>
+                <div class="form-tabs">
+                    <button class="tab-btn active" data-form="login">登录</button>
+                    <button class="tab-btn" data-form="register">注册</button>
+                    <button class="tab-btn" data-form="forgot">忘记密码</button>
+                </div>
+            </div>
+
+            <!-- 登录表单 -->
+            <form id="login-form" class="form active">
+                <div class="input-group">
+                    <label for="login-email">邮箱/用户名</label>
+                    <input type="text" id="login-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <span>记住我</span>
+                    </label>
+                    <a href="#" class="forgot-link" data-form="forgot">忘记密码？</a>
+                </div>
+                <button type="submit" class="submit-btn">登录</button>
+                <p class="form-switch">
+                    还没有账户？ <a href="#" data-form="register">立即注册</a>
+                </p>
+            </form>
+
+            <!-- 注册表单 -->
+            <form id="register-form" class="form">
+                <div class="input-group">
+                    <label for="register-username">用户名</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-email">邮箱</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">密码</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-confirm-password">确认密码</label>
+                    <input type="password" id="register-confirm-password" name="confirmPassword" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="agree-terms" required>
+                        <span>我同意 <a href="#" class="terms-link">服务条款</a> 和 <a href="#" class="privacy-link">隐私政策</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn">注册</button>
+                <p class="form-switch">
+                    已有账户？ <a href="#" data-form="login">立即登录</a>
+                </p>
+            </form>
+
+            <!-- 忘记密码表单 -->
+            <form id="forgot-form" class="form">
+                <div class="forgot-description">
+                    <p>请输入您的邮箱地址，我们将发送重置密码的链接到您的邮箱。</p>
+                </div>
+                <div class="input-group">
+                    <label for="forgot-email">邮箱</label>
+                    <input type="email" id="forgot-email" name="email" required>
+                </div>
+                <button type="submit" class="submit-btn">发送重置链接</button>
+                <p class="form-switch">
+                    想起密码了？ <a href="#" data-form="login">返回登录</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- 消息提示 -->
+    <div id="message" class="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
