@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestAi - 用户注册</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>用户注册</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="newUsername">用户名</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">邮箱地址</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="newPassword">密码</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="login-btn">注册</button>
+                <div class="links">
+                    <a href="index.html">返回登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="navigation.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showMessage('两次输入的密码不一致', 'error');
+                return;
+            }
+            
+            showMessage('注册成功！请登录', 'success');
+            setTimeout(() => {
+                navigationManager.navigateTo('index.html');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
