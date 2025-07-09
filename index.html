@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猿来编码 - 登录</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <h1>猿来编码</h1>
+                </div>
+                <p class="subtitle">欢迎回来，开始您的编程之旅</p>
+            </div>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="用户名或邮箱" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="密码" required>
+                </div>
+                
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        记住我
+                    </label>
+                    <a href="#" class="forgot-password">忘记密码？</a>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span>登录</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <div class="divider">
+                    <span>或</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn github">
+                        <i class="fab fa-github"></i>
+                        GitHub登录
+                    </button>
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        Google登录
+                    </button>
+                </div>
+                
+                <p class="signup-link">
+                    还没有账户？ <a href="#">立即注册</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
